@@ -2539,10 +2539,25 @@
 .coco-tile-icon .g-spin,
 .coco-tile-icon .g-spin-rev,
 .coco-tile-icon .g-breathe,
+.coco-tile-icon .g-scan,
 .coco-tile-icon .g-rise,
 .coco-tile-icon .g-rise-alt {
   transform-box: fill-box;
   transform-origin: center;
+}
+.coco-tile-icon .g-scan {
+  animation: g-scan 3.2s ease-in-out infinite;
+}
+@keyframes g-scan {
+  0%,
+  100% {
+    transform: translateY(-4.2px);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translateY(4.2px);
+    opacity: 1;
+  }
 }
 .coco-tile-icon .g-spin {
   animation: g-spin 9s linear infinite;

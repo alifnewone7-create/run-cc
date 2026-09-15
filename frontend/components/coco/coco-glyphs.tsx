@@ -2,12 +2,14 @@ type GlyphProps = { className?: string }
 
 const base = { fill: 'none', stroke: 'currentColor', strokeLinecap: 'round', strokeLinejoin: 'round' } as const
 
-/* Launch — hexagon ignition core with an upward surge bolt (hero primary CTA) */
+/* Launch — thrust ring with a forward launch vector and ignition spark */
 export function GlyphLaunch({ className }: GlyphProps) {
   return (
     <svg viewBox="0 0 32 32" className={className} aria-hidden="true">
-      <path d="M16 2.8 27.6 9.4v13.2L16 29.2 4.4 22.6V9.4L16 2.8Z" {...base} strokeWidth="2" opacity="0.55" />
-      <path d="M17.4 8.6 11 17.4h4.2l-.8 6.4 6.6-9.4h-4.2l.6-5.8Z" fill="currentColor" />
+      <path d="M22.6 5.4a12.4 12.4 0 1 0 4 8.2" {...base} strokeWidth="2.1" opacity="0.6" />
+      <path d="M12.8 10.4 22.4 16l-9.6 5.6V10.4Z" fill="currentColor" />
+      <path d="M3.4 16h4.4" {...base} strokeWidth="2.1" opacity="0.5" />
+      <path d="M27 3.2l.9 2.5 2.5.9-2.5.9-.9 2.5-.9-2.5-2.5-.9 2.5-.9.9-2.5Z" fill="currentColor" />
     </svg>
   )
 }
@@ -32,14 +34,19 @@ export function GlyphTelegram({ className }: GlyphProps) {
   )
 }
 
-/* OTC Analyzer — synthetic pair: interlocking arcs spinning around a pulsing cut diamond */
+/* OTC Analyzer — bracketed scan frame reading a synthetic pair, live scan line */
 export function GlyphOtc({ className }: GlyphProps) {
   return (
     <svg viewBox="0 0 32 32" className={className} aria-hidden="true">
-      <path className="g-spin" d="M13.2 8.2a8.4 8.4 0 1 0 0 15.6" {...base} strokeWidth="2.3" />
-      <path className="g-spin-rev" d="M18.8 23.8a8.4 8.4 0 1 0 0-15.6" {...base} strokeWidth="2.3" opacity="0.5" />
-      <path className="g-breathe" d="M16 11.4 20.4 16 16 20.6 11.6 16 16 11.4Z" fill="currentColor" />
-      <path d="M4.4 6.2V4.2h2M27.6 25.8v2h-2" {...base} strokeWidth="2" opacity="0.6" />
+      <path
+        d="M4 10.6V7.2a3.2 3.2 0 0 1 3.2-3.2h3.4M21.4 4h3.4A3.2 3.2 0 0 1 28 7.2v3.4M28 21.4v3.4a3.2 3.2 0 0 1-3.2 3.2h-3.4M10.6 28H7.2A3.2 3.2 0 0 1 4 24.8v-3.4"
+        {...base}
+        strokeWidth="2.2"
+      />
+      <path d="M12.6 10.4v11.8M19.4 8.8v13.4" {...base} strokeWidth="1.4" opacity="0.45" />
+      <rect className="g-rise" x="10.6" y="13" width="4" height="7" rx="1.2" fill="currentColor" />
+      <rect className="g-rise-alt" x="17.4" y="11.2" width="4" height="8.8" rx="1.2" {...base} strokeWidth="2" />
+      <path className="g-scan" d="M7.6 16h16.8" {...base} strokeWidth="2.2" opacity="0.85" />
     </svg>
   )
 }
