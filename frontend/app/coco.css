@@ -2532,39 +2532,7 @@
   place-items: center;
 }
 .coco-tile-sheen {
-  position: absolute;
-  top: -60%;
-  left: -120%;
-  width: 60%;
-  height: 220%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.05) 35%,
-    rgba(255, 255, 255, 0.28) 50%,
-    rgba(255, 255, 255, 0.05) 65%,
-    transparent 100%
-  );
-  transform: rotate(18deg) translate3d(0, 0, 0);
-  animation: coco-sheen 6.5s ease-in-out infinite;
-  pointer-events: none;
-}
-@keyframes coco-sheen {
-  0% {
-    transform: rotate(18deg) translate3d(0, 0, 0);
-    opacity: 0;
-  }
-  12% {
-    opacity: 1;
-  }
-  55% {
-    transform: rotate(18deg) translate3d(430%, 0, 0);
-    opacity: 0;
-  }
-  100% {
-    transform: rotate(18deg) translate3d(430%, 0, 0);
-    opacity: 0;
-  }
+  display: none;
 }
 
 /* live glyph motion — transform / opacity / dash only (GPU friendly) */
@@ -2659,9 +2627,6 @@
 
 /* Mobile: same look, lighter cost — slower cycles, no sheen repaint storm */
 @media (max-width: 640px) {
-  .coco-tile-sheen {
-    animation-duration: 9s;
-  }
   .coco-tile-icon .g-spin {
     animation-duration: 14s;
   }

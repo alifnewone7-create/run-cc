@@ -181,7 +181,6 @@ function Diagram({ layout, className }: { layout: Layout; className?: string }) 
             }
           >
             <span className="coco-tile-inner">
-              <i className="coco-tile-sheen" aria-hidden="true" style={{ animationDelay: `${i * 0.7}s` }} />
               <tile.icon className="coco-tile-icon" />
             </span>
           </div>
