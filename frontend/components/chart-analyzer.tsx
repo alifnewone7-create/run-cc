@@ -25,6 +25,7 @@ import {
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { PairFlags } from '@/components/pair-flags'
+import { AnalyzeFlow } from '@/components/analyze-flow'
 import { cn } from '@/lib/utils'
 import { useGatedAction } from '@/hooks/use-gated-action'
 
@@ -470,22 +471,9 @@ function AnalyzingOverlay() {
   }, [])
 
   return (
-    <div className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-5 bg-background/75 px-6 backdrop-blur-sm">
-      {/* quantum radar scope (unique analyzer element) */}
-      <div className="scope" aria-hidden="true">
-        <div className="scope-rings" />
-        <div className="scope-cross" />
-        <div className="scope-sweep" />
-        <div className="scope-orbit">
-          <span className="scope-blip" />
-        </div>
-        <div className="scope-orbit scope-orbit--slow">
-          <span className="scope-blip" />
-        </div>
-        <div className="scope-core">
-          <Scan className="h-4 w-4 text-primary-foreground" />
-        </div>
-      </div>
+    <div className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-3 bg-background/75 px-4 backdrop-blur-sm sm:gap-5 sm:px-6">
+      {/* wired engine flow — nodes light up as each analysis stage completes */}
+      <AnalyzeFlow stage={line} />
 
       <div className="flex items-center gap-2 font-mono text-xs text-accent sm:text-sm">
         <Cpu className="h-3.5 w-3.5" />
