@@ -30,13 +30,13 @@ type Layout = {
 }
 
 const TILES: Tile[] = [
-  { key: 'otc', label: 'OTC Analyzer', icon: GlyphOtc, bg: 'linear-gradient(145deg,#8a4cf0 0%,#4a1f9e 100%)', ink: '#fff' },
-  { key: 'real', label: 'Real Chart', icon: GlyphReal, bg: 'linear-gradient(145deg,#3d424f 0%,#1a1d25 100%)', ink: '#e8ecf5' },
-  { key: 'live', label: 'Live Signals', icon: GlyphLive, bg: 'linear-gradient(145deg,#5b4df0 0%,#241c7a 100%)', ink: '#fff' },
-  { key: 'future', label: 'Future Signals', icon: GlyphFuture, bg: 'linear-gradient(145deg,#4a3823 0%,#1f160c 100%)', ink: '#ff7a45' },
-  { key: 'news', label: 'News Signals', icon: GlyphNews, bg: 'linear-gradient(145deg,#3b3a2f 0%,#1a1a14 100%)', ink: '#f2f2ec' },
-  { key: 'risk', label: 'Risk Guard', icon: GlyphRisk, bg: 'linear-gradient(145deg,#3f3e86 0%,#1c1b4d 100%)', ink: '#c4a6ff' },
-  { key: 'feed', label: 'Market Feed', icon: GlyphFeed, bg: 'linear-gradient(145deg,#d02c97 0%,#5c1148 100%)', ink: '#fff' },
+  { key: 'otc', label: 'OTC Analyzer', icon: GlyphOtc, bg: 'linear-gradient(145deg,#a06bff 0%,#6d3fe0 46%,#2f1173 100%)', ink: '#fff' },
+  { key: 'real', label: 'Real Chart', icon: GlyphReal, bg: 'linear-gradient(145deg,#4a505f 0%,#262b36 48%,#12141b 100%)', ink: '#eef2fa' },
+  { key: 'live', label: 'Live Signals', icon: GlyphLive, bg: 'linear-gradient(145deg,#6f63ff 0%,#4034d8 46%,#191264 100%)', ink: '#fff' },
+  { key: 'future', label: 'Future Signals', icon: GlyphFuture, bg: 'linear-gradient(145deg,#5c4423 0%,#3a2612 48%,#160e06 100%)', ink: '#ff8c52' },
+  { key: 'news', label: 'News Signals', icon: GlyphNews, bg: 'linear-gradient(145deg,#4a4838 0%,#2b2a20 48%,#141410 100%)', ink: '#f6f6ee' },
+  { key: 'risk', label: 'Risk Guard', icon: GlyphRisk, bg: 'linear-gradient(145deg,#4f4da4 0%,#2f2e74 48%,#14133a 100%)', ink: '#cdb4ff' },
+  { key: 'feed', label: 'Market Feed', icon: GlyphFeed, bg: 'linear-gradient(145deg,#f04fae 0%,#a91f7a 46%,#4a0c38 100%)', ink: '#fff' },
 ]
 
 const DESKTOP: Layout = {
@@ -180,7 +180,10 @@ function Diagram({ layout, className }: { layout: Layout; className?: string }) 
               } as React.CSSProperties
             }
           >
-            <tile.icon className="coco-tile-icon" />
+            <span className="coco-tile-inner">
+              <i className="coco-tile-sheen" aria-hidden="true" style={{ animationDelay: `${i * 0.7}s` }} />
+              <tile.icon className="coco-tile-icon" />
+            </span>
           </div>
         )
       })}
