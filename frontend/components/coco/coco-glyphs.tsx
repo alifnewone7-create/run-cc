@@ -48,15 +48,17 @@ export function GlyphLive({ className }: GlyphProps) {
   )
 }
 
-/* Future Signals — forward time arc with a projection hand and spark */
+/* Future Signals — projected forecast: candles with a dashed breakout projection */
 export function GlyphFuture({ className }: GlyphProps) {
   return (
     <svg viewBox="0 0 32 32" className={className} aria-hidden="true">
-      <path d="M26.4 16A10.4 10.4 0 1 1 16 5.6" {...base} strokeWidth="2.3" />
-      <path d="M16 2.6v6M13.2 5.6H16" {...base} strokeWidth="2.1" opacity="0.6" />
-      <path d="M16 10.6V16l4.6 3" {...base} strokeWidth="2.4" />
-      <circle cx="16" cy="16" r="1.7" fill="currentColor" />
-      <path d="M25.6 21.6l1 2.7 2.7 1-2.7 1-1 2.7-1-2.7-2.7-1 2.7-1 1-2.7Z" fill="currentColor" />
+      <path d="M4.4 27h23.2" {...base} strokeWidth="1.5" opacity="0.32" />
+      <path d="M9.6 11.8v14.2M16.4 9.2v17.8" {...base} strokeWidth="1.4" opacity="0.45" />
+      <rect x="7.3" y="14.6" width="4.6" height="8.4" rx="1.4" fill="currentColor" />
+      <rect x="14.1" y="12" width="4.6" height="10.4" rx="1.4" {...base} strokeWidth="2.1" />
+      <path d="M20.6 20.2 27 11.2" {...base} strokeWidth="2.3" strokeDasharray="3.6 3.4" />
+      <path d="M22.4 10.4h5.2v5.2" {...base} strokeWidth="2.2" />
+      <circle cx="20.6" cy="20.2" r="1.8" fill="currentColor" />
     </svg>
   )
 }
