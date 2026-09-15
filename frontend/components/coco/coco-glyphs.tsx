@@ -2,6 +2,28 @@ type GlyphProps = { className?: string }
 
 const base = { fill: 'none', stroke: 'currentColor', strokeLinecap: 'round', strokeLinejoin: 'round' } as const
 
+/* Launch — hexagon ignition core with an upward surge bolt (hero primary CTA) */
+export function GlyphLaunch({ className }: GlyphProps) {
+  return (
+    <svg viewBox="0 0 32 32" className={className} aria-hidden="true">
+      <path d="M16 2.8 27.6 9.4v13.2L16 29.2 4.4 22.6V9.4L16 2.8Z" {...base} strokeWidth="2" opacity="0.55" />
+      <path d="M17.4 8.6 11 17.4h4.2l-.8 6.4 6.6-9.4h-4.2l.6-5.8Z" fill="currentColor" />
+    </svg>
+  )
+}
+
+/* Access plans — layered access key card (hero secondary CTA) */
+export function GlyphAccessPlan({ className }: GlyphProps) {
+  return (
+    <svg viewBox="0 0 32 32" className={className} aria-hidden="true">
+      <rect x="3.4" y="8.4" width="25.2" height="17.2" rx="3.4" {...base} strokeWidth="2.1" />
+      <path d="M7.6 4.6h16.8" {...base} strokeWidth="2.1" opacity="0.5" />
+      <circle cx="11.6" cy="17" r="3.4" {...base} strokeWidth="2.1" />
+      <path d="M15 17h9.4M20.4 17v3.4" {...base} strokeWidth="2.2" />
+    </svg>
+  )
+}
+
 export function GlyphTelegram({ className }: GlyphProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

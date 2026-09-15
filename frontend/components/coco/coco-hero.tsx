@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { ArrowRight, ChartCandlestick } from 'lucide-react'
 import { CocoEngine } from '@/components/coco/coco-engine'
+import { GlyphLaunch, GlyphAccessPlan } from '@/components/coco/coco-glyphs'
 import { CocoHeroBg } from '@/components/coco/coco-hero-bg'
 
 export function CocoHero() {
@@ -38,15 +38,15 @@ export function CocoHero() {
             className="coco-btn coco-btn-primary w-full sm:w-auto"
             data-testid="hero-cta-primary"
           >
+            <GlyphLaunch className="h-[18px] w-[18px]" />
             Launch Coco AI
-            <ArrowRight className="h-4 w-4" />
           </Link>
           <a
             href="#pricing"
             className="coco-btn coco-btn-ghost w-full sm:w-auto"
             data-testid="hero-cta-secondary"
           >
-            <ChartCandlestick className="h-4 w-4" />
+            <GlyphAccessPlan className="h-[18px] w-[18px]" />
             See access plans
           </a>
         </div>
