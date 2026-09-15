@@ -19,8 +19,7 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { StarField } from '@/components/star-field'
-import { TopNav } from '@/components/top-nav'
+import { CocoPageShell } from '@/components/coco/coco-page-shell'
 import { AuthGuard } from '@/components/auth-guard'
 import { useAuth } from '@/components/auth-provider'
 import { useUpgradeGate } from '@/components/upgrade-gate'
@@ -73,13 +72,16 @@ export function ManagementView() {
   return (
     <AuthGuard>
       {() => (
-        <main className="relative flex min-h-dvh flex-col bg-background">
-          <StarField />
-          <TopNav />
-          <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-1 flex-col gap-6 px-4 py-8 sm:px-6 sm:py-10 lg:py-12">
-            <ManagementStudio />
-          </div>
-        </main>
+        <CocoPageShell
+          testid="management-page"
+          eyebrow="Money management"
+          icon={SlidersHorizontal}
+          title="Size every trade with discipline."
+          desc="Feed in your capital, payout and risk, and get a clean trade sheet that tells you exactly how much to stake on each entry."
+          width="max-w-4xl"
+        >
+          <ManagementStudio />
+        </CocoPageShell>
       )}
     </AuthGuard>
   )

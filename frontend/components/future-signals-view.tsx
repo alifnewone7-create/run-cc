@@ -20,9 +20,9 @@ import {
   Minus,
   Plus,
   Hash,
+  Rocket,
 } from 'lucide-react'
-import { StarField } from '@/components/star-field'
-import { TopNav } from '@/components/top-nav'
+import { CocoPageShell } from '@/components/coco/coco-page-shell'
 import { AuthGuard } from '@/components/auth-guard'
 import { PairFlags } from '@/components/pair-flags'
 import { Button } from '@/components/ui/button'
@@ -59,13 +59,16 @@ export function FutureSignalsView() {
   return (
     <AuthGuard>
       {() => (
-        <main className="relative min-h-dvh bg-background">
-          <StarField />
-          <TopNav />
-          <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-6 px-4 py-8 sm:px-6 sm:py-10 lg:py-12">
-            <SignalStudio />
-          </div>
-        </main>
+        <CocoPageShell
+          testid="future-signals-page"
+          eyebrow="Future signals"
+          icon={Rocket}
+          title="Queue the next entries, ahead of time."
+          desc="Select your pairs, choose how many calls you want, and the engine schedules each entry with its direction and exact minute."
+          width="max-w-6xl"
+        >
+          <SignalStudio />
+        </CocoPageShell>
       )}
     </AuthGuard>
   )

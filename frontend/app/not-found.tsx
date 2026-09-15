@@ -1,48 +1,38 @@
+import Link from 'next/link'
+import Image from 'next/image'
+import { MoveLeft, Compass } from 'lucide-react'
+import { CocoHeroBg } from '@/components/coco/coco-hero-bg'
+
 export default function NotFound() {
   return (
-    <div className="relative min-h-dvh bg-background">
-      {/* Decorative gradient orbs */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -right-40 -top-40 h-96 w-96 rounded-full bg-gradient-to-br from-up/20 via-accent/10 to-transparent blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-gradient-to-br from-gold/15 via-accent/5 to-transparent blur-3xl" />
-      </div>
+    <div className="coco coco-dark relative flex min-h-dvh items-center justify-center overflow-hidden px-4 py-20">
+      <CocoHeroBg />
 
-      {/* Content */}
-      <div className="relative z-10 flex min-h-dvh flex-col items-center justify-center px-4 py-20 sm:px-6">
-        <div className="text-center">
-          {/* Logo */}
-          <div className="mb-8 flex justify-center">
-            <img
-              src="/sweetex-logo.jpg"
-              alt="Sweetex AI"
-              className="h-16 w-16 rounded-2xl shadow-lg"
-            />
-          </div>
+      <div className="relative z-10 flex flex-col items-center text-center">
+        <span className="relative h-16 w-16 overflow-hidden rounded-2xl ring-1 ring-white/20">
+          <Image src="/coco-profile.png" alt="Coco AI" fill sizes="64px" className="object-cover" />
+        </span>
 
-          {/* 404 Text */}
-          <h1 className="mb-3 text-center font-playfair text-7xl font-bold tracking-tight sm:text-8xl">
-            <span className="bg-gradient-to-r from-up via-gold to-accent bg-clip-text text-transparent">
-              404
-            </span>
-          </h1>
+        <span className="coco-eyebrow mt-6">
+          <Compass className="h-3 w-3" />
+          Lost window
+        </span>
 
-          <p className="mb-2 text-xl font-bold text-foreground sm:text-2xl">
-            Page Not Found
-          </p>
+        <h1 className="coco-display coco-title-gradient mt-5 text-[3.4rem] leading-none sm:text-[4.6rem]">
+          404
+        </h1>
 
-          <p className="mx-auto mb-8 max-w-md text-sm text-muted-foreground sm:text-base">
-            The page you&apos;re looking for doesn&apos;t exist. It might have
-            been moved, deleted, or perhaps you took a wrong turn in the market.
-          </p>
+        <p className="coco-sub mt-3 text-lg text-white sm:text-xl">This page is off the tape.</p>
 
-          {/* Sweetex branding */}
-          <div className="mt-16 flex flex-col items-center gap-2">
-            <p className="text-xs text-muted-foreground">Powered by</p>
-            <p className="font-playfair text-lg font-bold text-foreground">
-              Sweetex <span className="text-accent">AI</span>
-            </p>
-          </div>
-        </div>
+        <p className="mx-auto mt-3 max-w-[46ch] text-pretty text-sm leading-relaxed text-white/60 sm:text-base">
+          The page you are looking for has moved or never existed. Head back to the console and pick
+          up where you left off.
+        </p>
+
+        <Link href="/" className="coco-btn coco-btn-primary mt-8" data-testid="notfound-home-btn">
+          <MoveLeft className="h-4 w-4" />
+          Back to Coco AI
+        </Link>
       </div>
     </div>
   )

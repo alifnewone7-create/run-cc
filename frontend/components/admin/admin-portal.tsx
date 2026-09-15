@@ -47,9 +47,9 @@ export function AdminPortal() {
 
   if (authed === null) {
     return (
-      <main className="flex min-h-dvh items-center justify-center bg-background">
-        <div className="flex flex-col items-center gap-3 text-muted-foreground">
-          <Loader2 className="h-6 w-6 animate-spin text-accent" />
+      <main className="coco coco-dark flex min-h-dvh items-center justify-center">
+        <div className="flex flex-col items-center gap-3 text-white/60">
+          <Loader2 className="h-6 w-6 animate-spin text-[#c4a6ff]" />
           <p className="text-sm">Loading portal…</p>
         </div>
       </main>

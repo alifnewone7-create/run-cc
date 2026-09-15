@@ -130,7 +130,7 @@ export function AdminDashboard({ onLogout }: { onLogout: () => void }) {
   }
 
   return (
-    <main className="relative flex min-h-dvh bg-background">
+    <main className="coco coco-dark relative flex min-h-dvh">
       {/* Mobile backdrop */}
       {navOpen && (
         <button
@@ -144,7 +144,7 @@ export function AdminDashboard({ onLogout }: { onLogout: () => void }) {
       {/* Sidebar */}
       <aside
         className={cn(
-          'fixed inset-y-0 left-0 z-50 flex w-72 flex-col border-r border-border/60 bg-card/95 backdrop-blur-xl transition-transform duration-300 lg:static lg:z-0 lg:translate-x-0',
+          'fixed inset-y-0 left-0 z-50 flex w-72 flex-col border-r border-white/10 bg-[#140a33]/95 backdrop-blur-xl transition-transform duration-300 lg:static lg:z-0 lg:translate-x-0',
           navOpen ? 'translate-x-0' : '-translate-x-full',
         )}
       >
@@ -223,7 +223,7 @@ export function AdminDashboard({ onLogout }: { onLogout: () => void }) {
       {/* Content column */}
       <div className="flex min-w-0 flex-1 flex-col">
         {/* Mobile topbar */}
-        <header className="sticky top-0 z-30 flex items-center gap-3 border-b border-border/60 bg-background/85 px-4 py-3 backdrop-blur-xl lg:hidden">
+        <header className="sticky top-0 z-30 flex items-center gap-3 border-b border-white/10 bg-[#120a2c]/85 px-4 py-3 backdrop-blur-xl lg:hidden">
           <button
             type="button"
             onClick={() => setNavOpen(true)}

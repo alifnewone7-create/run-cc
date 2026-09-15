@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { ShieldCheck, Lock, User, Loader2, AlertTriangle, KeyRound } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { CocoHeroBg } from '@/components/coco/coco-hero-bg'
 
 export function AdminLogin({ onSuccess }: { onSuccess: () => void }) {
   const [username, setUsername] = useState('')
@@ -40,16 +41,18 @@ export function AdminLogin({ onSuccess }: { onSuccess: () => void }) {
   }
 
   return (
-    <main className="flex min-h-dvh items-center justify-center bg-background px-4 py-12">
-      <div className="border-luxe surface-luxe relative w-full max-w-sm overflow-hidden rounded-3xl p-6 shadow-2xl shadow-primary/20 sm:p-8">
-        <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-primary/20 blur-3xl" />
+    <main className="coco coco-dark relative flex min-h-dvh items-center justify-center overflow-hidden px-4 py-12">
+      <CocoHeroBg />
+      <div className="coco-d2-hero relative z-10 w-full max-w-sm !p-6 sm:!p-8">
+        <span className="coco-d2-hero-line" aria-hidden="true" />
 
         <div className="relative flex flex-col items-center text-center">
-          <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/15 text-primary">
+          <span className="coco-d2-meta-icon !h-14 !w-14 !rounded-2xl">
             <ShieldCheck className="h-7 w-7" />
           </span>
-          <h1 className="mt-4 text-2xl font-bold tracking-tight">Secure Portal</h1>
-          <p className="mt-1 text-sm text-muted-foreground">
+          <span className="coco-eyebrow mt-4">Restricted</span>
+          <h1 className="coco-display coco-title-gradient mt-3 text-2xl">Secure Portal</h1>
+          <p className="mt-1.5 text-sm text-white/60">
             Authorized access only. Enter your portal credentials.
           </p>
         </div>

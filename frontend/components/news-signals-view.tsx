@@ -23,9 +23,9 @@ import {
   Sparkles,
   Lock,
   KeyRound,
+  Newspaper,
 } from 'lucide-react'
-import { StarField } from '@/components/star-field'
-import { TopNav } from '@/components/top-nav'
+import { CocoPageShell } from '@/components/coco/coco-page-shell'
 import { AuthGuard } from '@/components/auth-guard'
 import { Button } from '@/components/ui/button'
 import { flagUrl } from '@/lib/markets'
@@ -132,13 +132,16 @@ export function NewsSignalsView() {
   return (
     <AuthGuard>
       {() => (
-        <main className="relative flex min-h-dvh flex-col bg-background">
-          <StarField />
-          <TopNav />
-          <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-1 flex-col gap-6 px-4 py-8 sm:px-6 sm:py-10 lg:py-12">
-            <NewsStudio />
-          </div>
-        </main>
+        <CocoPageShell
+          testid="news-signals-page"
+          eyebrow="News signals"
+          icon={Newspaper}
+          title="Trade the calendar, not the noise."
+          desc="Today's economic releases with their impact, plus an AI fundamental read so you know which windows to avoid and which to attack."
+          width="max-w-4xl"
+        >
+          <NewsStudio />
+        </CocoPageShell>
       )}
     </AuthGuard>
   )
