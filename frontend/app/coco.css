@@ -1690,8 +1690,10 @@
     rgba(0, 0, 0, 0.55) 0 22px 44px -18px,
     rgba(0, 0, 0, 0.35) 0 0 0 1px;
   opacity: 0;
-  animation: coco-pop 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: var(--d, 0ms);
+  animation:
+    coco-pop 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+    coco-float 7s ease-in-out infinite;
+  animation-delay: var(--d, 0ms), calc(var(--d, 0ms) + 900ms);
   transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
   cursor: default;
 }
@@ -1706,12 +1708,21 @@
 .coco-tile::after {
   content: '';
   position: absolute;
-  inset: -6px;
+  inset: -10px;
   border-radius: inherit;
-  background: radial-gradient(closest-side, rgba(200, 170, 255, 0.16), transparent);
-  opacity: 0;
+  background: radial-gradient(closest-side, rgba(200, 170, 255, 0.22), transparent);
+  opacity: 0.45;
   transition: opacity 0.35s ease;
   pointer-events: none;
+}
+@keyframes coco-float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.012);
+  }
 }
 .coco-tile:hover {
   transform: translateY(-5px) scale(1.05);
@@ -1743,29 +1754,100 @@
   position: absolute;
   aspect-ratio: 1;
   border-radius: 999px;
-  background: #ffffff;
+  background: radial-gradient(circle at 32% 24%, rgba(156, 116, 255, 0.5), rgba(10, 6, 24, 0.92) 68%);
   display: grid;
   place-items: center;
+  isolation: isolate;
   box-shadow:
-    rgba(255, 255, 255, 0.08) 0 0 0 10px,
-    rgba(170, 120, 255, 0.6) 0 0 90px -8px,
-    rgba(0, 0, 0, 0.7) 0 30px 60px -24px;
-  animation: coco-pop 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    rgba(255, 255, 255, 0.14) 0 0 0 1px inset,
+    rgba(160, 110, 255, 0.55) 0 0 110px -14px,
+    rgba(0, 0, 0, 0.75) 0 30px 60px -24px;
+  animation:
+    coco-pop 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+    coco-core-beat 5s ease-in-out 1s infinite;
   opacity: 0;
 }
 .coco-core-img {
   position: absolute;
-  inset: 12%;
+  inset: 5%;
   border-radius: 999px;
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.18) 0 0 0 1px inset;
+  box-shadow:
+    rgba(255, 255, 255, 0.18) 0 0 0 1px inset,
+    rgba(0, 0, 0, 0.55) 0 10px 26px -12px;
 }
 .coco-core-halo {
   position: absolute;
-  inset: -22%;
+  inset: -20%;
   border-radius: 999px;
-  border: 1px dashed rgba(255, 255, 255, 0.28);
-  animation: coco-orbit 24s linear infinite;
+  border: 1px dashed rgba(196, 166, 255, 0.3);
+  animation: coco-orbit 26s linear infinite;
+  pointer-events: none;
+}
+.coco-core-halo::before {
+  content: '';
+  position: absolute;
+  inset: 9%;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.coco-core-sweep {
+  position: absolute;
+  inset: -8%;
+  border-radius: 999px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(196, 166, 255, 0.85) 40deg,
+    rgba(255, 255, 255, 0.5) 62deg,
+    transparent 92deg,
+    transparent 360deg
+  );
+  mask: radial-gradient(circle, transparent 60%, #000 63%, #000 100%);
+  -webkit-mask: radial-gradient(circle, transparent 60%, #000 63%, #000 100%);
+  animation: coco-orbit 4.6s linear infinite;
+  pointer-events: none;
+  opacity: 0.9;
+}
+.coco-core-aura {
+  position: absolute;
+  inset: -90%;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle,
+    rgba(150, 100, 255, 0.26) 0%,
+    rgba(80, 50, 180, 0.12) 38%,
+    transparent 68%
+  );
+  animation: coco-aura 6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+@keyframes coco-core-beat {
+  0%,
+  100% {
+    box-shadow:
+      rgba(255, 255, 255, 0.14) 0 0 0 1px inset,
+      rgba(160, 110, 255, 0.5) 0 0 100px -16px,
+      rgba(0, 0, 0, 0.75) 0 30px 60px -24px;
+  }
+  50% {
+    box-shadow:
+      rgba(255, 255, 255, 0.2) 0 0 0 1px inset,
+      rgba(180, 130, 255, 0.72) 0 0 130px -8px,
+      rgba(0, 0, 0, 0.75) 0 30px 60px -24px;
+  }
+}
+@keyframes coco-aura {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.06);
+  }
 }
 
 .coco-legend {
@@ -2117,6 +2199,8 @@
   .coco-tile,
   .coco-core,
   .coco-core-halo,
+  .coco-core-sweep,
+  .coco-core-aura,
   .coco-dash,
   .coco-dash-seq,
   .coco-tape-track,

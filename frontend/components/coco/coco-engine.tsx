@@ -193,7 +193,9 @@ function Diagram({ layout, className }: { layout: Layout; className?: string }) 
           width: pct(core.r * 2, w),
         }}
       >
+        <span className="coco-core-aura" aria-hidden="true" />
         <span className="coco-core-halo" aria-hidden="true" />
+        <span className="coco-core-sweep" aria-hidden="true" />
         <span className="coco-core-img">
           <Image src="/coco-ai.jpg" alt="Coco AI core" fill sizes="120px" className="object-cover" />
         </span>
