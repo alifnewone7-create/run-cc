@@ -215,6 +215,7 @@ function Diagram({
   className?: string
 }) {
   const { id, w, h, core, tiles, wires } = layout
+  const glow = id === 'ad'
   return (
     <div className={`aflow ${className ?? ''}`} style={{ aspectRatio: `${w} / ${h}` }}>
       <svg
@@ -248,12 +249,12 @@ function Diagram({
                     pathLength={100}
                     fill="none"
                     stroke={tile.ring}
-                    strokeOpacity="0.85"
-                    strokeWidth="7"
+                    strokeOpacity={glow ? 0.85 : 0.5}
+                    strokeWidth={glow ? 7 : 5}
                     strokeLinecap="round"
                     strokeDasharray="14 686"
                     vectorEffect="non-scaling-stroke"
-                    filter={`url(#aflowGlow-${id})`}
+                    filter={glow ? `url(#aflowGlow-${id})` : undefined}
                     style={{ animationDelay: `${i * 0.18}s` }}
                   />
                   <path

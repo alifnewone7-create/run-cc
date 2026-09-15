@@ -95,7 +95,8 @@ function pct(v: number, base: number) {
 
 function Diagram({ layout, className }: { layout: Layout; className?: string }) {
   const { id, w, h, core, tiles, wires } = layout
-  const step = 0.5
+  const glow = id === 'd'
+  const step = 0.9
   const cycle = wires.length * step
   return (
     <div className={`relative w-full ${className ?? ''}`} style={{ aspectRatio: `${w} / ${h}` }}>
@@ -125,12 +126,12 @@ function Diagram({ layout, className }: { layout: Layout; className?: string }) 
               pathLength={100}
               fill="none"
               stroke="#c4a6ff"
-              strokeOpacity="0.9"
-              strokeWidth="7"
+              strokeOpacity={glow ? 0.9 : 0.55}
+              strokeWidth={glow ? 7 : 5}
               strokeLinecap="round"
               strokeDasharray="16 684"
               vectorEffect="non-scaling-stroke"
-              filter={`url(#cocoGlow-${id})`}
+              filter={glow ? `url(#cocoGlow-${id})` : undefined}
               style={{ animationDelay: `${i * step}s`, animationDuration: `${cycle}s` }}
             />
             <path

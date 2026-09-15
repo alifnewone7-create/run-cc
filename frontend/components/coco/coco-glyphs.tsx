@@ -2,7 +2,6 @@ type GlyphProps = { className?: string }
 
 const base = { fill: 'none', stroke: 'currentColor', strokeLinecap: 'round', strokeLinejoin: 'round' } as const
 
-/* OTC Analyzer: reversal loop inside a scanning aperture */
 export function GlyphTelegram({ className }: GlyphProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -11,88 +10,92 @@ export function GlyphTelegram({ className }: GlyphProps) {
   )
 }
 
+/* OTC Analyzer — synthetic pair: two interlocking arcs around a cut diamond core */
 export function GlyphOtc({ className }: GlyphProps) {
   return (
     <svg viewBox="0 0 32 32" className={className} aria-hidden="true">
-      <path d="M7 3.5H4.5A1.5 1.5 0 0 0 3 5v2.5M25 3.5h2.5A1.5 1.5 0 0 1 29 5v2.5M3 24.5V27a1.5 1.5 0 0 0 1.5 1.5H7M29 24.5V27a1.5 1.5 0 0 1-1.5 1.5H25" {...base} strokeWidth="1.8" opacity="0.55" />
-      <circle cx="16" cy="16" r="8.5" {...base} strokeWidth="1.9" opacity="0.35" />
-      <path d="M22.5 13.5A7 7 0 0 0 10 12.5" {...base} strokeWidth="2.2" />
-      <path d="M9.5 18.5A7 7 0 0 0 22 19.5" {...base} strokeWidth="2.2" />
-      <path d="M9.5 9.5v3.5H13M22.5 22.5V19h-3.5" {...base} strokeWidth="2.2" />
-      <circle cx="16" cy="16" r="2.2" fill="currentColor" />
+      <path d="M13.2 8.2a8.4 8.4 0 1 0 0 15.6" {...base} strokeWidth="2.3" />
+      <path d="M18.8 23.8a8.4 8.4 0 1 0 0-15.6" {...base} strokeWidth="2.3" opacity="0.5" />
+      <path d="M16 11.4 20.4 16 16 20.6 11.6 16 16 11.4Z" fill="currentColor" />
+      <path d="M4.4 6.2V4.2h2M27.6 25.8v2h-2" {...base} strokeWidth="2" opacity="0.6" />
     </svg>
   )
 }
 
-/* Real Chart: solid candles with a rising sparkline */
+/* Real Chart — outlined candles inside a bracketed viewport, trend ray breaking out */
 export function GlyphReal({ className }: GlyphProps) {
   return (
     <svg viewBox="0 0 32 32" className={className} aria-hidden="true">
-      <path d="M8 6v20M16 4v24M24 8v18" {...base} strokeWidth="1.6" opacity="0.5" />
-      <rect x="5.5" y="12" width="5" height="9" rx="1.4" fill="currentColor" opacity="0.85" />
-      <rect x="13.5" y="8" width="5" height="12" rx="1.4" fill="currentColor" />
-      <rect x="21.5" y="13" width="5" height="7" rx="1.4" fill="currentColor" opacity="0.85" />
-      <path d="M4 25.5c4-1 6.5-6 10-6.5s5 3 8 2 4.5-4.5 6.5-6" {...base} strokeWidth="2" opacity="0.9" />
+      <path d="M4.2 10.6V6.8a2.6 2.6 0 0 1 2.6-2.6h4M27.8 21.4v3.8a2.6 2.6 0 0 1-2.6 2.6h-4" {...base} strokeWidth="2" opacity="0.5" />
+      <path d="M10.4 9.6v12.8M20.4 7.8v13.4" {...base} strokeWidth="1.5" opacity="0.55" />
+      <rect x="7.9" y="12.6" width="5" height="7.2" rx="1.5" {...base} strokeWidth="2.1" />
+      <rect x="17.9" y="10.4" width="5" height="9.6" rx="1.5" fill="currentColor" />
+      <path d="M5.6 26.2c3.6-.6 5.4-4.6 8.4-5.2s4.2 2.6 6.8 1.8 3.8-3.8 5.6-5" {...base} strokeWidth="2.2" opacity="0.85" />
     </svg>
   )
 }
 
-/* Live Signals: bolt inside expanding broadcast rings */
+/* Live Signals — beacon mast broadcasting expanding arcs */
 export function GlyphLive({ className }: GlyphProps) {
   return (
     <svg viewBox="0 0 32 32" className={className} aria-hidden="true">
-      <path d="M6.5 7.5a13.5 13.5 0 0 0 0 17M25.5 7.5a13.5 13.5 0 0 1 0 17" {...base} strokeWidth="2" opacity="0.4" />
-      <path d="M10.5 11a7.5 7.5 0 0 0 0 10M21.5 11a7.5 7.5 0 0 1 0 10" {...base} strokeWidth="2" opacity="0.7" />
-      <path d="M17.5 7.5 13 17h3.5l-1 7.5 5-10H17l.5-7z" fill="currentColor" />
+      <path d="M16 27.5V14.8" {...base} strokeWidth="2.3" />
+      <path d="M11.4 27.5l4.6-8.4 4.6 8.4" {...base} strokeWidth="2" opacity="0.55" />
+      <circle cx="16" cy="11.4" r="2.6" fill="currentColor" />
+      <path d="M10.9 6.3a7.2 7.2 0 0 0 0 10.2M21.1 6.3a7.2 7.2 0 0 1 0 10.2" {...base} strokeWidth="2.1" />
+      <path d="M6.6 2.9a12.2 12.2 0 0 0 0 17M25.4 2.9a12.2 12.2 0 0 1 0 17" {...base} strokeWidth="1.7" opacity="0.38" />
     </svg>
   )
 }
 
-/* Future Signals: planet, orbit and a forward star */
+/* Future Signals — forward time arc with a projection hand and spark */
 export function GlyphFuture({ className }: GlyphProps) {
   return (
     <svg viewBox="0 0 32 32" className={className} aria-hidden="true">
-      <circle cx="15" cy="17" r="6.5" fill="currentColor" />
-      <path d="M3.5 21.5c4 3.5 15.5 1 21-4.5s6-10.5 3.5-12" {...base} strokeWidth="2" opacity="0.75" />
-      <path d="M4.5 12.5c3-5 12-7.5 18-4" {...base} strokeWidth="1.6" opacity="0.35" />
-      <path d="M25.5 21.5l.9 2.6 2.6.9-2.6.9-.9 2.6-.9-2.6-2.6-.9 2.6-.9z" fill="currentColor" />
+      <path d="M26.4 16A10.4 10.4 0 1 1 16 5.6" {...base} strokeWidth="2.3" />
+      <path d="M16 2.6v6M13.2 5.6H16" {...base} strokeWidth="2.1" opacity="0.6" />
+      <path d="M16 10.6V16l4.6 3" {...base} strokeWidth="2.4" />
+      <circle cx="16" cy="16" r="1.7" fill="currentColor" />
+      <path d="M25.6 21.6l1 2.7 2.7 1-2.7 1-1 2.7-1-2.7-2.7-1 2.7-1 1-2.7Z" fill="currentColor" />
     </svg>
   )
 }
 
-/* News Signals: globe with a headline pulse */
+/* News Signals — folded broadcast sheet with a headline waveform */
 export function GlyphNews({ className }: GlyphProps) {
   return (
     <svg viewBox="0 0 32 32" className={className} aria-hidden="true">
-      <circle cx="16" cy="16" r="11.5" {...base} strokeWidth="2" opacity="0.85" />
-      <path d="M16 4.5c-4 3.5-4 19.5 0 23M16 4.5c4 3.5 4 19.5 0 23" {...base} strokeWidth="1.6" opacity="0.45" />
-      <path d="M5 13h22M5 19h22" {...base} strokeWidth="1.6" opacity="0.45" />
-      <path d="M3 16h5l2-4 3 8 3-6 2 4h11" {...base} strokeWidth="2.4" />
+      <path d="M6 7.4h16.4a2.4 2.4 0 0 1 2.4 2.4v13.4a3 3 0 0 0 3 3H8.4A2.4 2.4 0 0 1 6 23.8V7.4Z" {...base} strokeWidth="2.1" />
+      <path d="M24.8 13.2h1.6a1.6 1.6 0 0 1 1.6 1.6v8.4a3 3 0 0 0 3 3" {...base} strokeWidth="1.7" opacity="0.4" />
+      <rect x="9.4" y="11" width="6.4" height="5" rx="1.3" fill="currentColor" />
+      <path d="M18.6 11.8h3M18.6 15.2h3" {...base} strokeWidth="1.9" opacity="0.65" />
+      <path d="M9.4 21.2h2.2l1.4-2.6 2 5 1.7-3.4 1.2 2.2h3.5" {...base} strokeWidth="2.2" />
     </svg>
   )
 }
 
-/* Risk Guard: layered shield with inner lock notch */
+/* Risk Guard — octagonal aegis with a locked crosshair */
 export function GlyphRisk({ className }: GlyphProps) {
   return (
     <svg viewBox="0 0 32 32" className={className} aria-hidden="true">
-      <path d="M16 3.5 5.5 7.5v8c0 6.5 4.5 11 10.5 13 6-2 10.5-6.5 10.5-13v-8L16 3.5z" {...base} strokeWidth="2" opacity="0.55" />
-      <path d="M16 8 9.5 10.5v5.5c0 4.2 2.8 7.2 6.5 8.5 3.7-1.3 6.5-4.3 6.5-8.5v-5.5L16 8z" fill="currentColor" opacity="0.92" />
-      <path d="M12.8 16.2 15 18.4l4.4-4.6" fill="none" stroke="#0e1030" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M11.4 3.6h9.2l7.8 7.8v9.2l-7.8 7.8h-9.2L3.6 20.6v-9.2l7.8-7.8Z" {...base} strokeWidth="2.1" opacity="0.55" />
+      <circle cx="16" cy="16" r="6.4" {...base} strokeWidth="2.2" />
+      <path d="M16 6.6v3.4M16 22v3.4M6.6 16h3.4M22 16h3.4" {...base} strokeWidth="2" opacity="0.6" />
+      <path d="M12.9 16.2l2.4 2.4 4-4.6" {...base} strokeWidth="2.4" />
     </svg>
   )
 }
 
-/* Market Feed: streaming bars with uplink arrow */
+/* Market Feed — uplink dish streaming data packets */
 export function GlyphFeed({ className }: GlyphProps) {
   return (
     <svg viewBox="0 0 32 32" className={className} aria-hidden="true">
-      <rect x="4" y="18" width="4.5" height="10" rx="1.5" fill="currentColor" opacity="0.6" />
-      <rect x="10.5" y="13" width="4.5" height="15" rx="1.5" fill="currentColor" opacity="0.8" />
-      <rect x="17" y="16" width="4.5" height="12" rx="1.5" fill="currentColor" opacity="0.7" />
-      <rect x="23.5" y="9" width="4.5" height="19" rx="1.5" fill="currentColor" />
-      <path d="M4.5 10.5 11 6l5 3.5L27 3.5" {...base} strokeWidth="2.2" />
-      <path d="M22.5 3.5H27V8" {...base} strokeWidth="2.2" />
+      <path d="M5.6 27.4 18 15" {...base} strokeWidth="2.2" />
+      <path d="M3.2 27.4h7.6" {...base} strokeWidth="2.2" opacity="0.6" />
+      <path d="M9.4 12.2a9.2 9.2 0 0 1 12.8 12.8L9.4 12.2Z" fill="currentColor" />
+      <path d="M20.6 11.4a6 6 0 0 1 6-6" {...base} strokeWidth="2.1" opacity="0.55" />
+      <path d="M22.4 15.6a10.2 10.2 0 0 1 10.2-10.2" {...base} strokeWidth="1.8" opacity="0.3" />
+      <circle cx="26.2" cy="5.4" r="2.1" fill="currentColor" />
     </svg>
   )
 }

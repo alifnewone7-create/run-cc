@@ -1805,7 +1805,7 @@
   );
   mask: radial-gradient(circle, transparent 60%, #000 63%, #000 100%);
   -webkit-mask: radial-gradient(circle, transparent 60%, #000 63%, #000 100%);
-  animation: coco-orbit 4.6s linear infinite;
+  animation: coco-orbit 7.5s linear infinite;
   pointer-events: none;
   opacity: 0.9;
 }
@@ -1819,7 +1819,7 @@
     rgba(80, 50, 180, 0.12) 38%,
     transparent 68%
   );
-  animation: coco-aura 6s ease-in-out infinite;
+  animation: coco-aura 10s ease-in-out infinite;
   pointer-events: none;
   z-index: -1;
 }
@@ -2497,4 +2497,27 @@
   border-color: #d8c9ff;
   background: linear-gradient(180deg, #f7f2ff 0%, #ffffff 100%);
   box-shadow: rgba(109, 59, 255, 0.12) 0 10px 24px -14px;
+}
+
+/* Mobile: keep the engine map light — entrance only, no continuous shadow/aura repaints */
+@media (max-width: 640px) {
+  .coco-tile {
+    animation-name: coco-pop;
+    animation-duration: 0.8s;
+    animation-delay: var(--d, 0ms);
+  }
+  .coco-core {
+    animation-name: coco-pop;
+    animation-duration: 0.9s;
+  }
+  .coco-core-aura {
+    animation: none;
+    opacity: 0.7;
+  }
+  .coco-core-sweep {
+    animation-duration: 9s;
+  }
+  .coco-core-halo {
+    animation-duration: 34s;
+  }
 }

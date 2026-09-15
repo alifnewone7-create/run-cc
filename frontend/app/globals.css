@@ -2634,7 +2634,7 @@
 }
 
 .aflow-pulse {
-  animation: aflow-pulse 1.9s linear infinite;
+  animation: aflow-pulse 3.2s linear infinite;
 }
 
 @keyframes aflow-pulse {
