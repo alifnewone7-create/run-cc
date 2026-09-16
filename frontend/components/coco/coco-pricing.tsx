@@ -132,9 +132,9 @@ export function CocoPricing() {
               {LICENSE_PERKS.map((perk) => (
                 <li
                   key={perk}
-                  className="group flex items-center gap-3 rounded-xl border border-white/[0.09] bg-gradient-to-r from-white/[0.075] to-white/[0.025] px-4 py-3.5 text-[13px] text-white/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] transition-[border-color,background-color,transform] duration-300 hover:-translate-y-[1px] hover:border-white/20 hover:bg-white/[0.09] sm:text-sm"
+                  className="group flex items-center gap-3 rounded-[10px] border border-white/[0.09] bg-gradient-to-r from-white/[0.075] to-white/[0.025] px-4 py-3.5 text-[13px] text-white/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] transition-[border-color,background-color,transform] duration-300 hover:-translate-y-[1px] hover:border-white/20 hover:bg-white/[0.09] sm:text-sm"
                 >
-                  <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border border-[#c4a6ff]/25 bg-[#c4a6ff]/12 text-[#c4a6ff] transition-colors duration-300 group-hover:bg-[#c4a6ff]/20">
+                  <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-[7px] border border-[#c4a6ff]/25 bg-[#c4a6ff]/12 text-[#c4a6ff] transition-colors duration-300 group-hover:bg-[#c4a6ff]/20">
                     <Check className="h-3.5 w-3.5" />
                   </span>
                   <span className="leading-snug">{perk}</span>
@@ -150,7 +150,7 @@ export function CocoPricing() {
               data-testid="pricing-license-cta"
             >
               <KeyRound className="h-4 w-4" />
-              Activate license
+              Purchase License
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>
