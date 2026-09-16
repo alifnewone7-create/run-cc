@@ -50,3 +50,15 @@ User writes in Banglish (Bengali in Latin script) — respond accordingly.
 - Note: Standard tier daily limit is 35/tool (lib/tiers.ts), not 50.
 - P1: Usage history chart for users; upgrade nudge when quota nearly used.
 - P2: Admin activity log; per-key usage stats in the API key panel.
+
+### Result card redesign (16 Sep 2026) — VERIFIED (iteration_5.json)
+- New `components/analysis-result.tsx` (AnalysisResultCard + redesigned details popup) and
+  `components/result-glyphs.tsx` (custom animated SVG glyphs); styles in `app/analysis-result.css`
+  (imported in layout.tsx after coco.css so `.ar-*` borders override `.coco *` white hairline).
+- Layout: pair header + OTC/REAL pill → CALL/PUT hero (spinning medallion, sweep, bar cluster on
+  desktop) → confidence ring + support/resistance price ladder side-by-side → trend/pattern chips →
+  "Analysis details" CTA. Popup: accent-rail sections, indicator badges, gradient score bars.
+- All borders violet/tone-tinted (no white). No backdrop-filter / heavy glow on <640px.
+- Old ResultBlock/StatTile/lux-beacon markup removed from chart-analyzer.tsx (lux-beacon CSS still
+  in globals.css, unused).
+- Still pending from earlier: apply CocoPageShell design to /login, /registration, /dashboard, /privacy.
