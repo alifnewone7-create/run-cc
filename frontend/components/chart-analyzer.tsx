@@ -225,7 +225,7 @@ export function ChartAnalyzer({ mode }: { mode: AnalyzerMode }) {
       {/* Result view fully replaces the upload card once ready */}
       {result ? (
         <div className="flex flex-col gap-6">
-          <AnalysisResultCard result={result} mode={mode} />
+          <AnalysisResultCard result={result} />
           <Button
             onClick={reset}
             data-testid="analyze-another-btn"

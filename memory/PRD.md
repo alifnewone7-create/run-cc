@@ -61,4 +61,5 @@ User writes in Banglish (Bengali in Latin script) — respond accordingly.
 - All borders violet/tone-tinted (no white). No backdrop-filter / heavy glow on <640px.
 - Old ResultBlock/StatTile/lux-beacon markup removed from chart-analyzer.tsx (lux-beacon CSS still
   in globals.css, unused).
+- 16 Sep follow-up: hero grid + sweep removed, hero is solid green (CALL) / red (PUT) gradient, OTC/REAL header pill removed.
 - Still pending from earlier: apply CocoPageShell design to /login, /registration, /dashboard, /privacy.

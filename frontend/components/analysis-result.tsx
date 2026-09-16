@@ -52,13 +52,7 @@ function biasOf(text: string): Tone {
   return 'flat'
 }
 
-export function AnalysisResultCard({
-  result,
-  mode,
-}: {
-  result: AnalysisResult
-  mode: 'otc' | 'real'
-}) {
+export function AnalysisResultCard({ result }: { result: AnalysisResult }) {
   const { description, analysis } = result
   const tone: Tone =
     analysis.signal === 'UP' ? 'up' : analysis.signal === 'DOWN' ? 'down' : 'flat'
@@ -105,9 +99,6 @@ export function AnalysisResultCard({
               </p>
             </div>
           </div>
-          <span className="ar-market" data-testid="result-market">
-            {mode === 'otc' ? 'OTC' : 'REAL'}
-          </span>
         </header>
 
         <SignalHero tone={tone} option={analysis.option} />
@@ -191,9 +182,6 @@ function SignalHero({ tone, option }: { tone: Tone; option: string }) {
       style={{ '--d': '90ms' } as React.CSSProperties}
       data-testid="signal-hero"
     >
-      <span className="ar-hero-grid" aria-hidden />
-      <span className="ar-hero-sweep" aria-hidden />
-
       <div className="ar-medal" aria-hidden>
         <span className="ar-medal-ring" />
         <span className="ar-medal-dash" />
